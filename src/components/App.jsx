@@ -12,13 +12,11 @@ export class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    // name: '',
-    // number: '',
   };
 
   handleAddForm = newContact => {
     const hasDublicate = this.state.contacts.some(
-      contact => contact.name === newContact.name
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     );
     if (hasDublicate) {
       alert(`${newContact.name} is already in contacts`);

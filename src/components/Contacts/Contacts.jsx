@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import css from './Contacts.module.css';
 
 export class Contacts extends Component {
   render() {
     const { contacts, onDeleteContact } = this.props;
 
     return (
-      <div>
+      <div className={css.contacts}>
         <ul>
           {contacts.map(contact => (
             <li key={contact.id}>
